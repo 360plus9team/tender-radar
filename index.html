@@ -9,36 +9,48 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #f4f5f7; --surface: #ffffff; --text: #1a1d29; --muted: #6b7280;
-    --border: #e3e5ea; --accent: #2454eb; --accent-soft: #eaf0ff;
-    --good: #16794f; --warn: #b45309;
+    --bg: #f7f7f8; --surface: #ffffff; --text: #1c2230; --muted: #6b7280;
+    --border: #e7e8ec; --accent: #ec1b34; --accent-soft: #fde7ea;
+    --navy: #2e3192; --navy-soft: #eaeaf7; --gold: #d99a2b;
     --sans: 'Inter', -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --bg: #101218; --surface: #171a22; --text: #eceef3; --muted: #949aab;
-      --border: #262b38; --accent: #5c86ff; --accent-soft: #1b2540;
-      --good: #3fd08a; --warn: #f0a94e;
+      --bg: #111319; --surface: #191c24; --text: #eceef3; --muted: #949aab;
+      --border: #262a35; --accent: #ff4f63; --accent-soft: #2c1820;
+      --navy: #7c80e0; --navy-soft: #1e2040; --gold: #e7b656;
     }
   }
   * { box-sizing: border-box; }
   html, body {
-    margin: 0; background: var(--bg); color: var(--text); font-family: var(--sans);
+    margin: 0; color: var(--text); font-family: var(--sans);
     padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px);
+    background-color: var(--bg);
+    background-image:
+      radial-gradient(600px circle at 100% 0%, rgba(236,27,52,0.05), transparent 60%),
+      radial-gradient(600px circle at 0% 100%, rgba(217,154,43,0.06), transparent 60%);
+    background-attachment: fixed;
   }
   #root { max-width: 1080px; margin: 0 auto; padding: 32px 20px 64px; }
 
-  header { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
-  h1 { font-size: 22px; font-weight: 700; margin: 0; }
-  #subtitle { color: var(--muted); font-size: 13px; margin-top: 4px; }
+  header { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 12px; margin-bottom: 28px; }
+  .header-left { display: flex; align-items: center; gap: 14px; }
+  #logo { height: 34px; width: auto; }
+  h1 { font-size: 23px; font-weight: 700; margin: 0; }
+  .gold-rule { width: 46px; height: 3px; background: var(--gold); border-radius: 2px; margin: 7px 0 6px 0; }
+  #subtitle { color: var(--muted); font-size: 13px; }
 
-  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 24px; }
-  .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
-  .stat-num { font-size: 26px; font-weight: 700; line-height: 1; }
-  .stat-label { color: var(--muted); font-size: 12.5px; margin-top: 6px; }
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 26px; }
+  .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 28px 24px; }
+  .stat-num { font-size: 42px; font-weight: 700; line-height: 1; color: var(--accent); }
+  .stat-label { color: var(--muted); font-size: 14px; margin-top: 12px; font-weight: 500; }
 
-  .panels { display: grid; grid-template-columns: 1.4fr 1fr; gap: 16px; margin-bottom: 24px; }
-  @media (max-width: 720px) { .panels { grid-template-columns: 1fr; } }
+  .panels { display: grid; grid-template-columns: 1.4fr 1fr; gap: 16px; margin-bottom: 24px; align-items: start; }
+  @media (max-width: 720px) {
+    .panels { grid-template-columns: 1fr; }
+    .panel-search { order: 2; }
+    .panel-dept { order: 1; }
+  }
 
   .panel { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
   .panel h2 { font-size: 13px; font-weight: 600; color: var(--muted); margin: 0 0 12px 0; text-transform: none; }
@@ -69,10 +81,10 @@
   #tenderTable tr:last-child td { border-bottom: none; }
   .t-title { font-weight: 600; max-width: 360px; }
   .t-title a { color: var(--text); text-decoration: none; }
-  .t-title a:hover { color: var(--accent); }
+  .t-title a:hover { color: var(--navy); }
   .badge {
     display: inline-block; font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 999px;
-    background: var(--accent-soft); color: var(--accent); white-space: nowrap;
+    background: var(--navy-soft); color: var(--navy); white-space: nowrap;
   }
   .closing { white-space: nowrap; }
   .doc-link {
@@ -87,9 +99,13 @@
 <body>
 <div id="root">
   <header>
-    <div>
-      <h1>Tender Radar</h1>
-      <div id="subtitle">Loading&hellip;</div>
+    <div class="header-left">
+      <img id="logo" src="verse-logo.png" alt="VerSe logo">
+      <div>
+        <h1>Tender Radar</h1>
+        <div class="gold-rule"></div>
+        <div id="subtitle">Loading&hellip;</div>
+      </div>
     </div>
   </header>
 
@@ -100,7 +116,7 @@
     <div class="stat-grid" id="statGrid"></div>
 
     <div class="panels">
-      <div class="panel">
+      <div class="panel panel-search">
         <h2>Search &amp; sort</h2>
         <div class="controls">
           <input id="search" type="text" placeholder="Search by title, department, or category&hellip;">
@@ -111,7 +127,7 @@
           </select>
         </div>
       </div>
-      <div class="panel">
+      <div class="panel panel-dept">
         <h2>Tenders by department</h2>
         <div id="deptTableWrap">
           <table class="dept-table">
