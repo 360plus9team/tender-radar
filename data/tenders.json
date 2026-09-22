@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-22T21:04:19",
+  "last_updated": "2026-09-23T00:26:18",
   "tenders": [
     {
       "id": "ONGC-EOI_for_empanelment_of_agencies_for_Project_Management_Consultant__PMC__services_for_",
@@ -17,7 +17,8 @@
       "publishedDate": "",
       "bidOpeningDate": "",
       "downloadEndDate": "",
-      "submissionEndDate": ""
+      "submissionEndDate": "",
+      "tenderValue": ""
     },
     {
       "id": "ONGC-EOI_for_Market_Exploration_for_Natural_Gas_Compression_and__or_Gas_Dehydration_Servic",
@@ -35,7 +36,8 @@
       "publishedDate": "",
       "bidOpeningDate": "",
       "downloadEndDate": "",
-      "submissionEndDate": ""
+      "submissionEndDate": "",
+      "tenderValue": ""
     },
     {
       "id": "ONGC-Selection_of_Technology_partner_s__for_setting_up_Compressed_Biogas__CBG__plants_thro",
@@ -53,7 +55,8 @@
       "publishedDate": "",
       "bidOpeningDate": "",
       "downloadEndDate": "",
-      "submissionEndDate": ""
+      "submissionEndDate": "",
+      "tenderValue": ""
     },
     {
       "id": "HPCL-Expression_of_Interest_for_Non-Fuel_Business_Partnerships_at_HPCL_Retail_Outlets_Acro",
@@ -71,7 +74,8 @@
       "publishedDate": "",
       "bidOpeningDate": "",
       "downloadEndDate": "",
-      "submissionEndDate": ""
+      "submissionEndDate": "",
+      "tenderValue": ""
     },
     {
       "id": "HPCL-Advertisement_for_Residential_Building_for_Setting_up_Transit_House_at_Coimbatore_in_",
@@ -89,7 +93,8 @@
       "publishedDate": "",
       "bidOpeningDate": "",
       "downloadEndDate": "",
-      "submissionEndDate": ""
+      "submissionEndDate": "",
+      "tenderValue": ""
     },
     {
       "id": "WB_-_ANIMAL_RESOURCES_DEVELOPMENT_DEPARTMENT-_WBARD_WBLDC_EOI-1077e_2025-26_Dated_08_09_20",
@@ -107,7 +112,8 @@
       "publishedDate": "09-Sep-2026 09:00 AM",
       "bidOpeningDate": "25-Sep-2026 12:00 PM",
       "downloadEndDate": "23-Sep-2026 12:00 PM",
-      "submissionEndDate": "23-Sep-2026 12:00 PM"
+      "submissionEndDate": "23-Sep-2026 12:00 PM",
+      "tenderValue": "NA"
     },
     {
       "id": "WB_-_INFORMATION_AND_CULTURAL_AFFAIRS_DEPARTMENT-_9971-ICA_N__dt__17_09_2026__2026_ICAD_10",
@@ -125,7 +131,8 @@
       "publishedDate": "17-Sep-2026 12:00 PM",
       "bidOpeningDate": "08-Oct-2026 12:30 PM",
       "downloadEndDate": "05-Oct-2026 12:30 PM",
-      "submissionEndDate": "05-Oct-2026 12:30 PM"
+      "submissionEndDate": "05-Oct-2026 12:30 PM",
+      "tenderValue": "NA"
     },
     {
       "id": "WB_-_INFORMATION_AND_CULTURAL_AFFAIRS_DEPARTMENT-_9822-ICA_N__dt__12_09_2026__2026_ICAD_10",
@@ -143,7 +150,8 @@
       "publishedDate": "12-Sep-2026 12:00 PM",
       "bidOpeningDate": "07-Oct-2026 12:30 PM",
       "downloadEndDate": "05-Oct-2026 12:30 PM",
-      "submissionEndDate": "05-Oct-2026 12:30 PM"
+      "submissionEndDate": "05-Oct-2026 12:30 PM",
+      "tenderValue": "NA"
     },
     {
       "id": "WB_-_KOLKATA_POLICE-_WBKP_CP_NIT-208_DIGITAL_VHF_HANDHELD_RADIO_SETS_WB_TEN____Dated_17_09",
@@ -161,7 +169,8 @@
       "publishedDate": "17-Sep-2026 06:00 PM",
       "bidOpeningDate": "09-Oct-2026 03:00 PM",
       "downloadEndDate": "07-Oct-2026 03:00 PM",
-      "submissionEndDate": "07-Oct-2026 03:00 PM"
+      "submissionEndDate": "07-Oct-2026 03:00 PM",
+      "tenderValue": "2,83,50,000"
     },
     {
       "id": "WB_-_KOLKATA_POLICE-_WBKP_CP_NIT-209_DIGITAL_VHF_STATIC_OR_MOBILE_RADIO_SETS_WB_TEN___Date",
@@ -179,7 +188,8 @@
       "publishedDate": "17-Sep-2026 06:00 PM",
       "bidOpeningDate": "09-Oct-2026 03:00 PM",
       "downloadEndDate": "07-Oct-2026 03:00 PM",
-      "submissionEndDate": "07-Oct-2026 03:00 PM"
+      "submissionEndDate": "07-Oct-2026 03:00 PM",
+      "tenderValue": "80,00,000"
     },
     {
       "id": "WB_-_LABOUR_DEPARTMENT-_AMO_1026__2026_LD_1037858_1_",
@@ -197,7 +207,8 @@
       "publishedDate": "21-Aug-2026 10:55 AM",
       "bidOpeningDate": "28-Sep-2026 11:00 AM",
       "downloadEndDate": "24-Sep-2026 04:00 PM",
-      "submissionEndDate": "24-Sep-2026 04:00 PM"
+      "submissionEndDate": "24-Sep-2026 04:00 PM",
+      "tenderValue": "NA"
     },
     {
       "id": "WB_-_MOHABANI_DEVELOPMENT_AUTHORITY-_001_DDC_RFP_MBDA_P_26__2nd_call___2026_MBDA_1042343_1",
@@ -215,7 +226,8 @@
       "publishedDate": "18-Sep-2026 02:00 PM",
       "bidOpeningDate": "05-Oct-2026 12:30 PM",
       "downloadEndDate": "02-Oct-2026 05:30 PM",
-      "submissionEndDate": "02-Oct-2026 05:30 PM"
+      "submissionEndDate": "02-Oct-2026 05:30 PM",
+      "tenderValue": "NA"
     },
     {
       "id": "WB_-_MUNICIPAL_AFFAIRS_DEPARTMENT-_10_of_CHAIRMAN_2nd_Call__OMM_2026-27_dt-03_09_26__2026_",
@@ -233,25 +245,8 @@
       "publishedDate": "10-Sep-2026 12:00 PM",
       "bidOpeningDate": "29-Sep-2026 11:00 AM",
       "downloadEndDate": "26-Sep-2026 05:00 PM",
-      "submissionEndDate": "26-Sep-2026 05:00 PM"
-    },
-    {
-      "id": "WB_-_MUNICIPAL_AFFAIRS_DEPARTMENT-_950__2026_MAD_1041145_1_",
-      "title": "Improvement of Mastic Road from i Panchayet Border to Kalyani Express Highway Ho Archna Medical, ii Near Om Trirupati Apartment at ward No and 4 Under Jurisdiction of Kanchrapara Municipality.",
-      "source": "WB - MUNICIPAL AFFAIRS DEPARTMENT",
-      "tenderId": "[950][2026_MAD_1041145_1]",
-      "uploadedOn": "09-Sep-2026 06:45 PM",
-      "closingDate": "25-Sep-2026 06:55 PM",
-      "location": "",
-      "category": "MUNICIPAL AFFAIRS DEPARTMENT||URBAN LOCAL BODIES||KANCHRAPARA",
-      "link": "https://wbtenders.gov.in/nicgep/app?component=%24DirectLink&page=FrontEndViewTender&service=direct&session=T&sp=SfFNSQv7KjITHy4HiEVocDg%3D%3D",
-      "emdAmount": "52,591",
-      "workDescription": "Improvement of Mastic Road from i Panchayet Border to Kalyani Express Highway Ho Archna Medical, ii Near Om Trirupati Apartment at ward No and 4 Under Jurisdiction of Kanchrapara Municipality.",
-      "venue": "Kanchrapara Municipality",
-      "publishedDate": "09-Sep-2026 06:45 PM",
-      "bidOpeningDate": "28-Sep-2026 12:00 PM",
-      "downloadEndDate": "25-Sep-2026 06:55 PM",
-      "submissionEndDate": "25-Sep-2026 06:55 PM"
+      "submissionEndDate": "26-Sep-2026 05:00 PM",
+      "tenderValue": "0.00"
     },
     {
       "id": "WB_-_MUNICIPAL_AFFAIRS_DEPARTMENT-_950__2026_MAD_1041145_9_",
@@ -269,7 +264,27 @@
       "publishedDate": "09-Sep-2026 06:45 PM",
       "bidOpeningDate": "28-Sep-2026 12:00 PM",
       "downloadEndDate": "25-Sep-2026 06:55 PM",
-      "submissionEndDate": "25-Sep-2026 06:55 PM"
+      "submissionEndDate": "25-Sep-2026 06:55 PM",
+      "tenderValue": "22,01,196"
+    },
+    {
+      "id": "WB_-_MUNICIPAL_AFFAIRS_DEPARTMENT-_950__2026_MAD_1041145_1_",
+      "title": "Improvement of Mastic Road from i Panchayet Border to Kalyani Express Highway Ho Archna Medical, ii Near Om Trirupati Apartment at ward No and 4 Under Jurisdiction of Kanchrapara Municipality.",
+      "source": "WB - MUNICIPAL AFFAIRS DEPARTMENT",
+      "tenderId": "[950][2026_MAD_1041145_1]",
+      "uploadedOn": "09-Sep-2026 06:45 PM",
+      "closingDate": "25-Sep-2026 06:55 PM",
+      "location": "",
+      "category": "MUNICIPAL AFFAIRS DEPARTMENT||URBAN LOCAL BODIES||KANCHRAPARA",
+      "link": "https://wbtenders.gov.in/nicgep/app?component=%24DirectLink&page=FrontEndViewTender&service=direct&session=T&sp=SfFNSQv7KjITHy4HiEVocDg%3D%3D",
+      "emdAmount": "52,591",
+      "workDescription": "Improvement of Mastic Road from i Panchayet Border to Kalyani Express Highway Ho Archna Medical, ii Near Om Trirupati Apartment at ward No and 4 Under Jurisdiction of Kanchrapara Municipality.",
+      "venue": "Kanchrapara Municipality",
+      "publishedDate": "09-Sep-2026 06:45 PM",
+      "bidOpeningDate": "28-Sep-2026 12:00 PM",
+      "downloadEndDate": "25-Sep-2026 06:55 PM",
+      "submissionEndDate": "25-Sep-2026 06:55 PM",
+      "tenderValue": "26,29,571"
     },
     {
       "id": "WB_-_OFFICE_OF_CHIEF_ELECTORAL_OFFICER_-_WB-_CEOWB_2026_e-Tender__05_SVEEP_Creative_Agency",
@@ -287,43 +302,8 @@
       "publishedDate": "07-Sep-2026 06:15 PM",
       "bidOpeningDate": "08-Oct-2026 03:30 PM",
       "downloadEndDate": "30-Sep-2026 03:00 PM",
-      "submissionEndDate": "30-Sep-2026 03:00 PM"
-    },
-    {
-      "id": "WB_-_OFFICE_OF_CHIEF_ELECTORAL_OFFICER_-_WB-_CEOWB_2026_e-Tender__03_SVEEP_Creative_Agency",
-      "title": "Selection of Creative Agency for Design and Production of  TVC with and without fresh Shoot",
-      "source": "WB - OFFICE OF CHIEF ELECTORAL OFFICER - WB",
-      "tenderId": "[CEOWB/2026/e-Tender/ 03/SVEEP/Creative Agency Date 7.9.2026][2026_CEO_1040963_1]",
-      "uploadedOn": "07-Sep-2026 06:00 PM",
-      "closingDate": "30-Sep-2026 03:00 PM",
-      "location": "",
-      "category": "OFFICE OF CHIEF ELECTORAL OFFICER - WB",
-      "link": "https://wbtenders.gov.in/nicgep/app?component=%24DirectLink&page=FrontEndViewTender&service=direct&session=T&sp=SnJ3XRctcmZz0QAEYH1Gfgg%3D%3D",
-      "emdAmount": "50,000",
-      "workDescription": "Selection of Creative Agency for Design and Production of  TVC with and without fresh Shoot",
-      "venue": "Office of the Chief Electoral Officer West Bengal",
-      "publishedDate": "07-Sep-2026 06:00 PM",
-      "bidOpeningDate": "08-Oct-2026 03:30 PM",
-      "downloadEndDate": "30-Sep-2026 03:00 PM",
-      "submissionEndDate": "30-Sep-2026 03:00 PM"
-    },
-    {
-      "id": "WB_-_OFFICE_OF_CHIEF_ELECTORAL_OFFICER_-_WB-_CEOWB_2026_e-Tender__04_SVEEP_Creative_Agency",
-      "title": "Selection of Creative Agency for Audio Visual documentation of major electoral events with subtitles with and without fresh shoot",
-      "source": "WB - OFFICE OF CHIEF ELECTORAL OFFICER - WB",
-      "tenderId": "[CEOWB/2026/e-Tender/ 04/SVEEP/Creative Agency Date 7.9.2026 ][2026_CEO_1040970_1]",
-      "uploadedOn": "07-Sep-2026 06:00 PM",
-      "closingDate": "30-Sep-2026 03:00 PM",
-      "location": "",
-      "category": "OFFICE OF CHIEF ELECTORAL OFFICER - WB",
-      "link": "https://wbtenders.gov.in/nicgep/app?component=%24DirectLink&page=FrontEndViewTender&service=direct&session=T&sp=SvB0PKfuBJZ6aS3Db7IgO1A%3D%3D",
-      "emdAmount": "1,00,000",
-      "workDescription": "Selection of Creative Agency for Audio Visual documentation of major electoral events with subtitles with and without fresh shoot",
-      "venue": "Office of the Chief Electoral Officer West Bengal",
-      "publishedDate": "07-Sep-2026 06:00 PM",
-      "bidOpeningDate": "08-Oct-2026 03:30 PM",
-      "downloadEndDate": "30-Sep-2026 03:00 PM",
-      "submissionEndDate": "30-Sep-2026 03:00 PM"
+      "submissionEndDate": "30-Sep-2026 03:00 PM",
+      "tenderValue": "NA"
     },
     {
       "id": "WB_-_OFFICE_OF_CHIEF_ELECTORAL_OFFICER_-_WB-_CEOWB_2026_e-Tender_01__SVEEP_CreativeAgency_",
@@ -341,7 +321,46 @@
       "publishedDate": "07-Sep-2026 06:00 PM",
       "bidOpeningDate": "08-Oct-2026 03:30 PM",
       "downloadEndDate": "30-Sep-2026 03:00 PM",
-      "submissionEndDate": "30-Sep-2026 03:00 PM"
+      "submissionEndDate": "30-Sep-2026 03:00 PM",
+      "tenderValue": "NA"
+    },
+    {
+      "id": "WB_-_OFFICE_OF_CHIEF_ELECTORAL_OFFICER_-_WB-_CEOWB_2026_e-Tender__03_SVEEP_Creative_Agency",
+      "title": "Selection of Creative Agency for Design and Production of  TVC with and without fresh Shoot",
+      "source": "WB - OFFICE OF CHIEF ELECTORAL OFFICER - WB",
+      "tenderId": "[CEOWB/2026/e-Tender/ 03/SVEEP/Creative Agency Date 7.9.2026][2026_CEO_1040963_1]",
+      "uploadedOn": "07-Sep-2026 06:00 PM",
+      "closingDate": "30-Sep-2026 03:00 PM",
+      "location": "",
+      "category": "OFFICE OF CHIEF ELECTORAL OFFICER - WB",
+      "link": "https://wbtenders.gov.in/nicgep/app?component=%24DirectLink&page=FrontEndViewTender&service=direct&session=T&sp=SnJ3XRctcmZz0QAEYH1Gfgg%3D%3D",
+      "emdAmount": "50,000",
+      "workDescription": "Selection of Creative Agency for Design and Production of  TVC with and without fresh Shoot",
+      "venue": "Office of the Chief Electoral Officer West Bengal",
+      "publishedDate": "07-Sep-2026 06:00 PM",
+      "bidOpeningDate": "08-Oct-2026 03:30 PM",
+      "downloadEndDate": "30-Sep-2026 03:00 PM",
+      "submissionEndDate": "30-Sep-2026 03:00 PM",
+      "tenderValue": "NA"
+    },
+    {
+      "id": "WB_-_OFFICE_OF_CHIEF_ELECTORAL_OFFICER_-_WB-_CEOWB_2026_e-Tender__04_SVEEP_Creative_Agency",
+      "title": "Selection of Creative Agency for Audio Visual documentation of major electoral events with subtitles with and without fresh shoot",
+      "source": "WB - OFFICE OF CHIEF ELECTORAL OFFICER - WB",
+      "tenderId": "[CEOWB/2026/e-Tender/ 04/SVEEP/Creative Agency Date 7.9.2026 ][2026_CEO_1040970_1]",
+      "uploadedOn": "07-Sep-2026 06:00 PM",
+      "closingDate": "30-Sep-2026 03:00 PM",
+      "location": "",
+      "category": "OFFICE OF CHIEF ELECTORAL OFFICER - WB",
+      "link": "https://wbtenders.gov.in/nicgep/app?component=%24DirectLink&page=FrontEndViewTender&service=direct&session=T&sp=SvB0PKfuBJZ6aS3Db7IgO1A%3D%3D",
+      "emdAmount": "1,00,000",
+      "workDescription": "Selection of Creative Agency for Audio Visual documentation of major electoral events with subtitles with and without fresh shoot",
+      "venue": "Office of the Chief Electoral Officer West Bengal",
+      "publishedDate": "07-Sep-2026 06:00 PM",
+      "bidOpeningDate": "08-Oct-2026 03:30 PM",
+      "downloadEndDate": "30-Sep-2026 03:00 PM",
+      "submissionEndDate": "30-Sep-2026 03:00 PM",
+      "tenderValue": "NA"
     },
     {
       "id": "WB_-_SARASWATY_PRESS_LIMITED-_SPL-202609-0064__2026_SPL_1041972_2_",
@@ -359,7 +378,8 @@
       "publishedDate": "22-Sep-2026 04:00 PM",
       "bidOpeningDate": "28-Sep-2026 01:00 PM",
       "downloadEndDate": "28-Sep-2026 12:00 PM",
-      "submissionEndDate": "28-Sep-2026 12:00 PM"
+      "submissionEndDate": "28-Sep-2026 12:00 PM",
+      "tenderValue": "9,00,000"
     },
     {
       "id": "WB_-_SARASWATY_PRESS_LIMITED-_SPL-202608-0057__2026_SPL_1039814_2_",
@@ -377,7 +397,8 @@
       "publishedDate": "22-Sep-2026 02:00 PM",
       "bidOpeningDate": "28-Sep-2026 02:00 PM",
       "downloadEndDate": "28-Sep-2026 01:00 PM",
-      "submissionEndDate": "28-Sep-2026 01:00 PM"
+      "submissionEndDate": "28-Sep-2026 01:00 PM",
+      "tenderValue": "12,00,000"
     },
     {
       "id": "WB_-_SARASWATY_PRESS_LIMITED-_SPL-202609-0060___2026_SPL_1040730_1_",
@@ -395,7 +416,8 @@
       "publishedDate": "05-Sep-2026 03:00 PM",
       "bidOpeningDate": "25-Sep-2026 11:00 AM",
       "downloadEndDate": "24-Sep-2026 02:00 PM",
-      "submissionEndDate": "24-Sep-2026 02:00 PM"
+      "submissionEndDate": "24-Sep-2026 02:00 PM",
+      "tenderValue": "8,00,000"
     },
     {
       "id": "WB_-_THE_WB_STATE_CO-OP__AGRI__AND_RURAL_DEV__BANK_LTD_-_2510_862_Dt__19_09_2026__2026_SCA",
@@ -413,7 +435,8 @@
       "publishedDate": "21-Sep-2026 09:00 AM",
       "bidOpeningDate": "17-Oct-2026 04:00 PM",
       "downloadEndDate": "09-Oct-2026 03:00 PM",
-      "submissionEndDate": "09-Oct-2026 03:00 PM"
+      "submissionEndDate": "09-Oct-2026 03:00 PM",
+      "tenderValue": "NA"
     },
     {
       "id": "WB_-_THE_WB_STATE_CO-OP__AGRI__AND_RURAL_DEV__BANK_LTD_-_2159_P-VI_Admn__860_Dt__19_09_202",
@@ -431,7 +454,8 @@
       "publishedDate": "19-Sep-2026 03:00 PM",
       "bidOpeningDate": "30-Oct-2026 11:00 AM",
       "downloadEndDate": "26-Oct-2026 03:00 PM",
-      "submissionEndDate": "26-Oct-2026 03:00 PM"
+      "submissionEndDate": "26-Oct-2026 03:00 PM",
+      "tenderValue": "NA"
     },
     {
       "id": "WB_-_THE_WEST_BENGAL_POWER_DEVELOPMENT_CORPORATION_LTD_-_GM__K__CC_TM_3163_V4_E4113__2026_",
@@ -449,7 +473,8 @@
       "publishedDate": "19-Sep-2026 01:00 PM",
       "bidOpeningDate": "08-Oct-2026 02:30 PM",
       "downloadEndDate": "05-Oct-2026 02:00 PM",
-      "submissionEndDate": "05-Oct-2026 02:00 PM"
+      "submissionEndDate": "05-Oct-2026 02:00 PM",
+      "tenderValue": "19,52,537"
     },
     {
       "id": "WB_-_THE_WEST_BENGAL_POWER_DEVELOPMENT_CORPORATION_LTD_-_WBPDCL_BKTPP_NIT_E4354_26-27__202",
@@ -467,7 +492,8 @@
       "publishedDate": "14-Sep-2026 09:00 AM",
       "bidOpeningDate": "06-Oct-2026 10:00 AM",
       "downloadEndDate": "03-Oct-2026 05:00 PM",
-      "submissionEndDate": "03-Oct-2026 05:00 PM"
+      "submissionEndDate": "03-Oct-2026 05:00 PM",
+      "tenderValue": "NA"
     },
     {
       "id": "WB_-_THE_WEST_BENGAL_POWER_DEVELOPMENT_CORPORATION_LTD_-_WBPDCL_STPS_NIT_E4487_26-27__1420",
@@ -485,7 +511,8 @@
       "publishedDate": "26-Aug-2026 10:00 AM",
       "bidOpeningDate": "26-Sep-2026 04:00 PM",
       "downloadEndDate": "24-Sep-2026 04:00 PM",
-      "submissionEndDate": "24-Sep-2026 04:00 PM"
+      "submissionEndDate": "24-Sep-2026 04:00 PM",
+      "tenderValue": "5,67,065"
     },
     {
       "id": "WB_-_THE_WEST_BENGAL_POWER_DEVELOPMENT_CORPORATION_LTD_-_WBPDCL_SGTPP_NIT_E4194_26-27__777",
@@ -503,7 +530,8 @@
       "publishedDate": "25-Aug-2026 10:00 AM",
       "bidOpeningDate": "28-Sep-2026 03:00 PM",
       "downloadEndDate": "23-Sep-2026 03:00 PM",
-      "submissionEndDate": "23-Sep-2026 03:00 PM"
+      "submissionEndDate": "23-Sep-2026 03:00 PM",
+      "tenderValue": "16,03,466"
     },
     {
       "id": "WB_-_THE_WEST_BENGAL_POWER_DEVELOPMENT_CORPORATION_LTD_-_WBPDCL_CORP_NIT_E2273_26-27__E145",
@@ -521,7 +549,8 @@
       "publishedDate": "29-Jul-2026 02:00 PM",
       "bidOpeningDate": "25-Sep-2026 12:00 PM",
       "downloadEndDate": "23-Sep-2026 05:00 PM",
-      "submissionEndDate": "23-Sep-2026 05:00 PM"
+      "submissionEndDate": "23-Sep-2026 05:00 PM",
+      "tenderValue": "NA"
     },
     {
       "id": "WB_-_WB_TRANSPORT_INFRASTRUCTURE_DEV__CORP__LTD_-_IN-WBTIDCL-529823-GO-RFB-2ND_CALL__2026_",
@@ -539,7 +568,8 @@
       "publishedDate": "08-Jul-2026 09:00 AM",
       "bidOpeningDate": "28-Sep-2026 04:30 PM",
       "downloadEndDate": "28-Sep-2026 04:00 PM",
-      "submissionEndDate": "28-Sep-2026 04:00 PM"
+      "submissionEndDate": "28-Sep-2026 04:00 PM",
+      "tenderValue": "14,06,59,756"
     },
     {
       "id": "WB_-_WEST_BENGAL_STATE_FOOD_PROCESSING_AND_HORTICULTURE_DEV__CORP__LTD-_211_FPI__2026_WBSF",
@@ -557,7 +587,8 @@
       "publishedDate": "11-Sep-2026 05:00 PM",
       "bidOpeningDate": "09-Oct-2026 03:00 PM",
       "downloadEndDate": "07-Oct-2026 03:00 PM",
-      "submissionEndDate": "07-Oct-2026 03:00 PM"
+      "submissionEndDate": "07-Oct-2026 03:00 PM",
+      "tenderValue": "42,00,000"
     }
   ]
 }
