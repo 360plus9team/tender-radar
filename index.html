@@ -76,12 +76,12 @@
   <div id="error" style="display:none;"></div>
   <div id="content" style="display:none;">
 
-    <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:12px; margin-bottom:16px;">
-      <h1 id="t-title" style="font-size:22px; line-height:1.3; margin:0; font-weight:700;"></h1>
-      <span id="t-source" class="box" style="flex-shrink:0; font-size:12px; font-weight:600; padding:6px 12px; border-radius:999px; white-space:nowrap;"></span>
+    <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:20px;">
+      <span id="t-source" class="box" style="align-self:flex-start; font-size:12px; font-weight:600; padding:6px 12px; border-radius:999px;"></span>
+      <h1 id="t-title" style="font-size:22px; line-height:1.35; margin:0; font-weight:700;"></h1>
     </div>
 
-    <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:10px; margin-bottom:20px;">
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap:10px; margin-bottom:20px;">
       <div class="box"><div class="label">CLOSING DATE</div><div id="t-closing" class="value">—</div></div>
       <div class="box"><div class="label">EMD AMOUNT</div><div id="t-emd" class="value">—</div></div>
       <div class="box"><div class="label">CATEGORY</div><div id="t-category" class="value">—</div></div>
@@ -97,7 +97,7 @@
       <p id="t-desc" style="font-size:14px; line-height:1.6; margin:0;">—</p>
     </div>
 
-    <div style="display:flex; gap:8px;">
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap:10px;">
       <div class="box" style="flex:1;"><div class="label">LOCATION</div><div id="t-location" class="value">—</div></div>
       <div class="box" style="flex:1;"><div class="label">TENDER ID</div><div id="t-id" class="value">—</div></div>
     </div>
