@@ -41,9 +41,23 @@
   #subtitle { color: var(--muted); font-size: 13px; }
 
   .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 26px; }
-  .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 28px 24px; }
+  .stat-card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 28px 24px;
+    cursor: pointer; transition: box-shadow 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+  }
+  .stat-card:hover { border-color: var(--accent); transform: translateY(-1px); }
+  .stat-card.active {
+    border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-soft); background: var(--accent-soft);
+  }
   .stat-num { font-size: 42px; font-weight: 700; line-height: 1; color: var(--accent); }
   .stat-label { color: var(--muted); font-size: 14px; margin-top: 12px; font-weight: 500; }
+
+  @media (max-width: 480px) {
+    .stat-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 20px; }
+    .stat-card { padding: 14px 12px; border-radius: 10px; }
+    .stat-num { font-size: 26px; }
+    .stat-label { font-size: 11.5px; margin-top: 5px; }
+  }
 
   .panels { display: grid; grid-template-columns: 1.4fr 1fr; gap: 16px; margin-bottom: 24px; align-items: start; }
   @media (max-width: 720px) {
@@ -93,6 +107,9 @@
   }
   .doc-link:hover { text-decoration: underline; }
 
+  #filterStatus { display: flex; align-items: center; gap: 8px; }
+  #filterStatus a { color: var(--accent); font-weight: 600; cursor: pointer; text-decoration: none; }
+  #filterStatus a:hover { text-decoration: underline; }
   #loading, #error, #empty { padding: 60px 16px; color: var(--muted); text-align: center; }
 </style>
 </head>
@@ -138,6 +155,7 @@
       </div>
     </div>
 
+    <div id="filterStatus" style="display:none; margin-bottom:10px; font-size:13px; color:var(--muted);"></div>
     <div id="tenderTableWrap">
       <table id="tenderTable">
         <thead>
@@ -184,6 +202,16 @@
   ];
 
   var ALL_TENDERS = [];
+  var currentCategory = 'all';
+
+  var CATEGORY_LABELS = {
+    all: 'Relevant tenders',
+    empanelment: 'Empanelment tenders',
+    social: 'Social media tenders',
+    event: 'Event tenders',
+    advertising: 'Advertising & publicity',
+    other: 'Other relevant tenders',
+  };
 
   function categorize(t) {
     var text = ((t.title || '') + ' ' + (t.category || '')).toLowerCase();
@@ -230,17 +258,25 @@
     tenders.forEach(function (t) { counts[categorize(t)]++; });
 
     var cards = [
-      { num: counts.total, label: 'Relevant tenders' },
-      { num: counts.empanelment, label: 'Empanelment tenders' },
-      { num: counts.social, label: 'Social media tenders' },
-      { num: counts.event, label: 'Event tenders' },
-      { num: counts.advertising, label: 'Advertising & publicity' },
-      { num: counts.other, label: 'Other relevant tenders' },
+      { key: 'all', num: counts.total, label: CATEGORY_LABELS.all },
+      { key: 'empanelment', num: counts.empanelment, label: CATEGORY_LABELS.empanelment },
+      { key: 'social', num: counts.social, label: CATEGORY_LABELS.social },
+      { key: 'event', num: counts.event, label: CATEGORY_LABELS.event },
+      { key: 'advertising', num: counts.advertising, label: CATEGORY_LABELS.advertising },
+      { key: 'other', num: counts.other, label: CATEGORY_LABELS.other },
     ];
     var grid = document.getElementById('statGrid');
     grid.innerHTML = cards.map(function (c) {
-      return '<div class="stat-card"><div class="stat-num">' + c.num + '</div><div class="stat-label">' + c.label + '</div></div>';
+      var activeClass = (c.key === currentCategory) ? ' active' : '';
+      return '<div class="stat-card' + activeClass + '" data-key="' + c.key + '">' +
+        '<div class="stat-num">' + c.num + '</div><div class="stat-label">' + c.label + '</div></div>';
     }).join('');
+  }
+
+  function updateStatCardActiveStates() {
+    document.querySelectorAll('.stat-card').forEach(function (card) {
+      card.classList.toggle('active', card.getAttribute('data-key') === currentCategory);
+    });
   }
 
   function renderDeptTable(tenders) {
@@ -290,11 +326,28 @@
     return copy;
   }
 
+  function updateFilterStatus() {
+    var statusEl = document.getElementById('filterStatus');
+    if (currentCategory === 'all') {
+      statusEl.style.display = 'none';
+      return;
+    }
+    statusEl.style.display = 'flex';
+    statusEl.innerHTML = 'Showing: <strong>' + CATEGORY_LABELS[currentCategory] + '</strong> &nbsp;&middot;&nbsp; <a id="clearFilter">Clear filter</a>';
+    document.getElementById('clearFilter').addEventListener('click', function () {
+      currentCategory = 'all';
+      updateStatCardActiveStates();
+      renderTenderTable();
+    });
+  }
+
   function renderTenderTable() {
+    updateFilterStatus();
     var searchTerm = document.getElementById('search').value.trim().toLowerCase();
     var sortMode = document.getElementById('sortSelect').value;
 
     var filtered = ALL_TENDERS.filter(function (t) {
+      if (currentCategory !== 'all' && categorize(t) !== currentCategory) return false;
       if (!searchTerm) return true;
       var haystack = ((t.title || '') + ' ' + (t.source || '') + ' ' + (t.category || '')).toLowerCase();
       return haystack.indexOf(searchTerm) !== -1;
@@ -353,6 +406,15 @@
 
       document.getElementById('search').addEventListener('input', renderTenderTable);
       document.getElementById('sortSelect').addEventListener('change', renderTenderTable);
+
+      document.getElementById('statGrid').addEventListener('click', function (e) {
+        var card = e.target.closest('.stat-card');
+        if (!card) return;
+        var key = card.getAttribute('data-key');
+        currentCategory = (currentCategory === key) ? 'all' : key;
+        updateStatCardActiveStates();
+        renderTenderTable();
+      });
     })
     .catch(function (err) {
       showError('Could not load tenders: ' + err.message);
