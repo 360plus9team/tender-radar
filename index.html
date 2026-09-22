@@ -4,43 +4,85 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Tender Radar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #f7f7f8; --card-bg: #ffffff; --text: #1a1a1a; --muted: #888888; --accent: #111111; --tag-bg: #eef2ff; --tag-text: #3730a3;
+    --ink: #1c2333;
+    --ink-light: #545f70;
+    --paper: #eef0ec;
+    --card: #fbfbf8;
+    --accent: #9a7526;
+    --accent-deep: #6f5416;
+    --line: #d5d6cb;
+    --serif: 'Source Serif 4', Georgia, serif;
+    --sans: 'IBM Plex Sans', -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --bg: #16161a; --card-bg: #212126; --text: #f2f2f2; --muted: #9a9a9a; --accent: #f2f2f2; --tag-bg: #2a2a3a; --tag-text: #c7d2fe;
+      --ink: #eef0ec;
+      --ink-light: #a6ada0;
+      --paper: #13161d;
+      --card: #1a1e27;
+      --accent: #d3a94a;
+      --accent-deep: #e7c377;
+      --line: #2b2f3a;
     }
   }
+  * { box-sizing: border-box; }
   html, body {
-    height: 100%; margin: 0; background: var(--bg); color: var(--text);
-    font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    height: 100%; margin: 0; background: var(--paper); color: var(--ink);
+    font-family: var(--sans);
     padding-top: env(safe-area-inset-top, 0px);
     padding-bottom: env(safe-area-inset-bottom, 0px);
   }
-  #root { max-width: 760px; margin: 0 auto; padding: 24px 16px 48px; box-sizing: border-box; }
-  h1 { font-size: 22px; margin: 0 0 4px 0; }
-  #subtitle { color: var(--muted); font-size: 13px; margin-bottom: 20px; }
-  #loading, #error, #empty { text-align: center; padding: 80px 16px; color: var(--muted); }
-  .card {
-    display: block; background: var(--card-bg); border-radius: 12px; padding: 16px;
-    margin-bottom: 12px; text-decoration: none; color: var(--text);
+  #root { max-width: 720px; margin: 0 auto; padding: 40px 20px 64px; }
+
+  header { margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+  h1 {
+    font-family: var(--serif); font-weight: 600; font-size: 30px; margin: 0 0 6px 0; letter-spacing: -0.01em;
   }
-  .card-title { font-size: 15px; font-weight: 700; margin-bottom: 8px; line-height: 1.4; }
-  .card-meta { display: flex; flex-wrap: wrap; gap: 8px; font-size: 12px; color: var(--muted); }
-  .tag {
-    background: var(--tag-bg); color: var(--tag-text); padding: 3px 10px; border-radius: 999px; font-weight: 600;
+  #subtitle { color: var(--ink-light); font-size: 14px; }
+
+  #loading, #error, #empty {
+    padding: 60px 16px; color: var(--ink-light); font-size: 15px; line-height: 1.6;
   }
+
+  #list { display: flex; flex-direction: column; }
+
+  .entry {
+    display: flex; gap: 18px; align-items: flex-start; padding: 18px 4px;
+    border-bottom: 1px solid var(--line); text-decoration: none; color: inherit;
+  }
+  .entry:hover .entry-title { color: var(--accent-deep); }
+  .entry:hover .stub { border-color: var(--accent); }
+
+  .stub {
+    flex-shrink: 0; width: 64px; text-align: center; padding: 8px 4px;
+    border: 1px solid var(--line); border-radius: 4px; font-family: var(--sans);
+  }
+  .stub-day { font-size: 19px; font-weight: 600; line-height: 1.1; }
+  .stub-month { font-size: 11px; color: var(--ink-light); margin-top: 2px; }
+
+  .entry-body { flex: 1; min-width: 0; }
+  .entry-title {
+    font-family: var(--serif); font-size: 16px; font-weight: 600; line-height: 1.4; margin-bottom: 6px;
+  }
+  .entry-meta { font-size: 13px; color: var(--ink-light); display: flex; flex-wrap: wrap; gap: 4px 10px; }
+  .entry-meta .tag { color: var(--accent-deep); font-weight: 600; }
+  .entry-meta span:not(:last-child)::after { content: '·'; margin-left: 10px; color: var(--line); }
 </style>
 </head>
 <body>
 <div id="root">
-  <h1>Tender Radar</h1>
-  <div id="subtitle">Loading...</div>
-  <div id="loading">Loading tenders...</div>
+  <header>
+    <h1>Tender Radar</h1>
+    <div id="subtitle">Loading&hellip;</div>
+  </header>
+  <div id="loading">Fetching the latest tenders.</div>
   <div id="error" style="display:none;"></div>
-  <div id="empty" style="display:none;">No relevant tenders found right now, check back after the next scrape.</div>
+  <div id="empty" style="display:none;">No relevant tenders on record right now. Check back after the next scrape, or widen the keywords in keywords.txt if this seems too quiet.</div>
   <div id="list"></div>
 </div>
 
@@ -62,6 +104,20 @@
     sessionStorage.setItem('tr_unlocked', 'yes');
   })();
 
+  var MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+  function parseStub(dateStr) {
+    // Tries to pull a day + month out of whatever date format the
+    // source gave us (e.g. "05-Oct-2026 12:30 PM" or "2026-07-21").
+    // Falls back to a plain dash if it can't make sense of it.
+    if (!dateStr) return { day: '—', month: '' };
+    var match = String(dateStr).match(/(\d{1,2})[-\s]([A-Za-z]{3})/);
+    if (match) return { day: match[1], month: match[2] };
+    var iso = String(dateStr).match(/(\d{4})-(\d{2})-(\d{2})/);
+    if (iso) return { day: String(parseInt(iso[3], 10)), month: MONTHS[parseInt(iso[2], 10) - 1] };
+    return { day: '—', month: '' };
+  }
+
   function escapeHtml(str) {
     var div = document.createElement('div');
     div.textContent = str || '';
@@ -78,20 +134,25 @@
 
     var listEl = document.getElementById('list');
     tenders.forEach(function (t) {
-      var card = document.createElement('a');
-      card.className = 'card';
-      card.href = 'detail.html?id=' + encodeURIComponent(t.id);
+      var stub = parseStub(t.closingDate);
+      var entry = document.createElement('a');
+      entry.className = 'entry';
+      entry.href = 'detail.html?id=' + encodeURIComponent(t.id);
 
       var metaParts = [];
       if (t.source) metaParts.push('<span class="tag">' + escapeHtml(t.source) + '</span>');
-      if (t.closingDate) metaParts.push('<span>Closes: ' + escapeHtml(t.closingDate) + '</span>');
       if (t.category) metaParts.push('<span>' + escapeHtml(t.category) + '</span>');
+      if (t.closingDate) metaParts.push('<span>Closes ' + escapeHtml(t.closingDate) + '</span>');
 
-      card.innerHTML =
-        '<div class="card-title">' + escapeHtml(t.title || 'Untitled tender') + '</div>' +
-        '<div class="card-meta">' + metaParts.join('') + '</div>';
+      entry.innerHTML =
+        '<div class="stub"><div class="stub-day">' + escapeHtml(stub.day) + '</div>' +
+        '<div class="stub-month">' + escapeHtml(stub.month) + '</div></div>' +
+        '<div class="entry-body">' +
+        '<div class="entry-title">' + escapeHtml(t.title || 'Untitled tender') + '</div>' +
+        '<div class="entry-meta">' + metaParts.join('') + '</div>' +
+        '</div>';
 
-      listEl.appendChild(card);
+      listEl.appendChild(entry);
     });
   }
 
