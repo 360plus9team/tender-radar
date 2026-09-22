@@ -6,93 +6,89 @@
 <title>Tender Details</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #1c2333;
-    --ink-light: #545f70;
-    --paper: #eef0ec;
-    --card: #fbfbf8;
-    --accent: #9a7526;
-    --accent-deep: #6f5416;
-    --line: #d5d6cb;
-    --serif: 'Source Serif 4', Georgia, serif;
-    --sans: 'IBM Plex Sans', -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    --bg: #f7f7f8; --surface: #ffffff; --text: #1c2230; --muted: #6b7280;
+    --border: #e7e8ec; --accent: #ec1b34; --accent-soft: #fde7ea;
+    --navy: #2e3192; --navy-soft: #eaeaf7; --gold: #d99a2b;
+    --sans: 'Inter', -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --ink: #eef0ec;
-      --ink-light: #a6ada0;
-      --paper: #13161d;
-      --card: #1a1e27;
-      --accent: #d3a94a;
-      --accent-deep: #e7c377;
-      --line: #2b2f3a;
+      --bg: #111319; --surface: #191c24; --text: #eceef3; --muted: #949aab;
+      --border: #262a35; --accent: #ff4f63; --accent-soft: #2c1820;
+      --navy: #7c80e0; --navy-soft: #1e2040; --gold: #e7b656;
     }
   }
   * { box-sizing: border-box; }
   html, body {
-    height: 100%; margin: 0; background: var(--paper); color: var(--ink);
-    font-family: var(--sans);
-    padding-top: env(safe-area-inset-top, 0px);
-    padding-bottom: env(safe-area-inset-bottom, 0px);
+    height: 100%; margin: 0; color: var(--text); font-family: var(--sans);
+    padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px);
+    background-color: var(--bg);
+    background-image:
+      radial-gradient(600px circle at 100% 0%, rgba(236,27,52,0.05), transparent 60%),
+      radial-gradient(600px circle at 0% 100%, rgba(217,154,43,0.06), transparent 60%);
+    background-attachment: fixed;
   }
   #root { max-width: 680px; margin: 0 auto; padding: 32px 20px 64px; }
-  #loading, #error { padding: 80px 16px; color: var(--ink-light); text-align: center; }
+  #loading, #error { padding: 80px 16px; color: var(--muted); text-align: center; }
+
+  .header-bar { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+  #logo { height: 26px; width: auto; }
 
   a.back {
-    display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px;
-    color: var(--ink-light); text-decoration: none; font-size: 13px;
+    display: inline-flex; align-items: center; gap: 6px; margin-bottom: 20px;
+    color: var(--muted); text-decoration: none; font-size: 13px;
   }
-  a.back:hover { color: var(--accent-deep); }
+  a.back:hover { color: var(--accent); }
 
   .tag {
-    display: inline-block; font-size: 12px; font-weight: 600; color: var(--accent-deep);
-    border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; margin-bottom: 14px;
+    display: inline-block; font-size: 12px; font-weight: 600; color: var(--navy);
+    background: var(--navy-soft); border-radius: 999px; padding: 4px 12px; margin-bottom: 14px;
   }
-  h1 {
-    font-family: var(--serif); font-weight: 600; font-size: 26px; line-height: 1.35;
-    margin: 0 0 24px 0; letter-spacing: -0.01em;
-  }
+  h1 { font-weight: 700; font-size: 24px; line-height: 1.35; margin: 0 0 8px 0; }
+  .gold-rule { width: 46px; height: 3px; background: var(--gold); border-radius: 2px; margin: 0 0 24px 0; }
 
-  .facts { border-top: 1px solid var(--line); margin-bottom: 28px; }
+  .facts { border-top: 1px solid var(--border); margin-bottom: 28px; background: var(--surface); border-radius: 10px 10px 0 0; }
   .fact {
-    display: flex; justify-content: space-between; gap: 16px; padding: 12px 2px;
-    border-bottom: 1px solid var(--line); font-size: 14px;
+    display: flex; justify-content: space-between; gap: 16px; padding: 13px 14px;
+    border-bottom: 1px solid var(--border); font-size: 14px;
   }
-  .fact .flabel { color: var(--ink-light); }
+  .fact .flabel { color: var(--muted); }
   .fact .fvalue { font-weight: 600; text-align: right; }
 
   h2 {
     font-family: var(--sans); font-size: 13px; font-weight: 600; letter-spacing: 0.02em;
-    color: var(--ink-light); margin: 0 0 14px 0;
+    color: var(--muted); margin: 0 0 14px 0;
   }
   section { margin-bottom: 28px; }
 
   #timeline { position: relative; padding-left: 20px; }
   #timeline::before {
-    content: ''; position: absolute; left: 4px; top: 4px; bottom: 4px; width: 1px; background: var(--line);
+    content: ''; position: absolute; left: 4px; top: 4px; bottom: 4px; width: 1px; background: var(--border);
   }
   .step { position: relative; margin-bottom: 16px; }
   .step:last-child { margin-bottom: 0; }
   .step-dot {
     position: absolute; left: -20px; top: 4px; width: 9px; height: 9px; border-radius: 50%;
-    background: var(--accent); border: 2px solid var(--paper);
+    background: var(--accent); border: 2px solid var(--bg);
   }
-  .step-label { font-size: 12px; color: var(--ink-light); }
+  .step-label { font-size: 12px; color: var(--muted); }
   .step-value { font-size: 14px; font-weight: 600; }
 
-  #t-desc { font-size: 15px; line-height: 1.7; color: var(--ink); margin: 0; }
+  #t-desc { font-size: 15px; line-height: 1.7; color: var(--text); margin: 0; }
 
   a.button {
-    display: block; text-align: center; margin-top: 8px; background: var(--ink); color: var(--paper);
-    text-decoration: none; padding: 15px; border-radius: 6px; font-weight: 600; font-size: 14px;
+    display: block; text-align: center; margin-top: 8px; background: var(--accent); color: #fff;
+    text-decoration: none; padding: 15px; border-radius: 8px; font-weight: 600; font-size: 14px;
   }
-  a.button:hover { background: var(--accent-deep); }
+  a.button:hover { background: var(--navy); }
 </style>
 </head>
 <body>
 <div id="root">
+  <div class="header-bar"><img id="logo" src="verse-logo.png" alt="VerSe logo"></div>
   <div id="loading">Loading tender&hellip;</div>
   <div id="error" style="display:none;"></div>
   <div id="content" style="display:none;">
@@ -100,10 +96,13 @@
 
     <div id="t-source" class="tag"></div>
     <h1 id="t-title"></h1>
+    <div class="gold-rule"></div>
 
     <div class="facts">
       <div class="fact"><span class="flabel">Closing date</span><span id="t-closing" class="fvalue">—</span></div>
+      <div class="fact"><span class="flabel">Published date</span><span id="t-published" class="fvalue">—</span></div>
       <div class="fact"><span class="flabel">EMD amount</span><span id="t-emd" class="fvalue">—</span></div>
+      <div class="fact"><span class="flabel">Tender value</span><span id="t-value" class="fvalue">—</span></div>
       <div class="fact"><span class="flabel">Category</span><span id="t-category" class="fvalue">—</span></div>
       <div class="fact"><span class="flabel">Location</span><span id="t-location" class="fvalue">—</span></div>
       <div class="fact"><span class="flabel">Tender ID</span><span id="t-id" class="fvalue">—</span></div>
@@ -172,7 +171,9 @@
     showField('t-title', item.title, 'Untitled tender');
     showField('t-source', item.source, 'Unknown source');
     showField('t-closing', item.closingDate, 'Not specified');
+    showField('t-published', item.publishedDate || item.uploadedOn, 'Not specified');
     showField('t-emd', item.emdAmount ? ('\u20b9' + item.emdAmount) : '', 'Not specified');
+    showField('t-value', (item.tenderValue && item.tenderValue !== 'NA') ? ('\u20b9' + item.tenderValue) : '', 'Not specified');
     showField('t-category', item.category, 'Not specified');
     showField('t-location', item.location || item.venue, 'Not specified');
     showField('t-id', item.tenderId, 'Not specified');
