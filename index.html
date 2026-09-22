@@ -3,161 +3,96 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Tender Details</title>
+<title>Tender Radar</title>
 <style>
   :root {
-    --bg: #f7f7f8;
-    --card-bg: #ffffff;
-    --text: #1a1a1a;
-    --muted: #888888;
-    --accent: #111111;
+    --bg: #f7f7f8; --card-bg: #ffffff; --text: #1a1a1a; --muted: #888888; --accent: #111111; --tag-bg: #eef2ff; --tag-text: #3730a3;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --bg: #16161a;
-      --card-bg: #212126;
-      --text: #f2f2f2;
-      --muted: #9a9a9a;
-      --accent: #f2f2f2;
+      --bg: #16161a; --card-bg: #212126; --text: #f2f2f2; --muted: #9a9a9a; --accent: #f2f2f2; --tag-bg: #2a2a3a; --tag-text: #c7d2fe;
     }
   }
   html, body {
-    height: 100%;
-    margin: 0;
-    background: var(--bg);
-    color: var(--text);
+    height: 100%; margin: 0; background: var(--bg); color: var(--text);
     font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
     padding-top: env(safe-area-inset-top, 0px);
     padding-bottom: env(safe-area-inset-bottom, 0px);
   }
-  #root {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 24px 16px 48px;
-    box-sizing: border-box;
+  #root { max-width: 760px; margin: 0 auto; padding: 24px 16px 48px; box-sizing: border-box; }
+  h1 { font-size: 22px; margin: 0 0 4px 0; }
+  #subtitle { color: var(--muted); font-size: 13px; margin-bottom: 20px; }
+  #loading, #error, #empty { text-align: center; padding: 80px 16px; color: var(--muted); }
+  .card {
+    display: block; background: var(--card-bg); border-radius: 12px; padding: 16px;
+    margin-bottom: 12px; text-decoration: none; color: var(--text);
   }
-  #loading, #error {
-    text-align: center;
-    padding: 80px 16px;
-    color: var(--muted);
-  }
-  .box {
-    background: var(--card-bg);
-    border-radius: 10px;
-    padding: 12px;
-  }
-  .label {
-    font-size: 11px;
-    color: var(--muted);
-    letter-spacing: 0.02em;
-    margin-bottom: 4px;
-  }
-  .value {
-    font-size: 14px;
-    font-weight: 600;
-  }
-  a.button {
-    display: block;
-    text-align: center;
-    margin-top: 16px;
-    background: var(--accent);
-    color: var(--bg);
-    text-decoration: none;
-    padding: 14px;
-    border-radius: 10px;
-    font-weight: 600;
-    font-size: 14px;
+  .card-title { font-size: 15px; font-weight: 700; margin-bottom: 8px; line-height: 1.4; }
+  .card-meta { display: flex; flex-wrap: wrap; gap: 8px; font-size: 12px; color: var(--muted); }
+  .tag {
+    background: var(--tag-bg); color: var(--tag-text); padding: 3px 10px; border-radius: 999px; font-weight: 600;
   }
 </style>
 </head>
 <body>
 <div id="root">
-  <div id="loading">Loading tender...</div>
+  <h1>Tender Radar</h1>
+  <div id="subtitle">Loading...</div>
+  <div id="loading">Loading tenders...</div>
   <div id="error" style="display:none;"></div>
-  <div id="content" style="display:none;">
-
-    <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:20px;">
-      <span id="t-source" class="box" style="align-self:flex-start; font-size:12px; font-weight:600; padding:6px 12px; border-radius:999px;"></span>
-      <h1 id="t-title" style="font-size:22px; line-height:1.35; margin:0; font-weight:700;"></h1>
-    </div>
-
-    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap:10px; margin-bottom:20px;">
-      <div class="box"><div class="label">CLOSING DATE</div><div id="t-closing" class="value">—</div></div>
-      <div class="box"><div class="label">EMD AMOUNT</div><div id="t-emd" class="value">—</div></div>
-      <div class="box"><div class="label">CATEGORY</div><div id="t-category" class="value">—</div></div>
-    </div>
-
-    <div id="timeline-section" style="margin-bottom:22px;">
-      <h2 style="font-size:15px; font-weight:700; margin:0 0 12px 0;">Timeline</h2>
-      <div id="timeline" style="border-left:2px solid var(--muted); padding-left:16px;"></div>
-    </div>
-
-    <div id="desc-section" style="margin-bottom:22px;">
-      <h2 style="font-size:15px; font-weight:700; margin:0 0 8px 0;">Work Description</h2>
-      <p id="t-desc" style="font-size:14px; line-height:1.6; margin:0;">—</p>
-    </div>
-
-    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap:10px;">
-      <div class="box" style="flex:1;"><div class="label">LOCATION</div><div id="t-location" class="value">—</div></div>
-      <div class="box" style="flex:1;"><div class="label">TENDER ID</div><div id="t-id" class="value">—</div></div>
-    </div>
-
-    <a id="t-link" href="#" target="_blank" class="button">View Original Tender</a>
-  </div>
+  <div id="empty" style="display:none;">No relevant tenders found right now, check back after the next scrape.</div>
+  <div id="list"></div>
 </div>
 
 <script>
-  // WIX_ENDPOINT is set below, once we know your site's real address.
-  var WIX_ENDPOINT = "https://360plus9.com/_functions/getTenderById";
+  // Change this to whatever password you want colleagues to use.
+  // This is a light gate, not real security, anyone who reads this
+  // file's code can see the password too.
+  var SITE_PASSWORD = "qwertyasdf";
 
-  function showField(id, value, fallback) {
-    var el = document.getElementById(id);
-    el.textContent = (value && String(value).trim()) ? value : (fallback || 'Not available');
-  }
-
-  function addTimelineStep(label, value) {
-    if (!value) return;
-    var timeline = document.getElementById('timeline');
-    var step = document.createElement('div');
-    step.style.marginBottom = '14px';
-    step.style.position = 'relative';
-    var dot = document.createElement('div');
-    dot.style.cssText = 'position:absolute; left:-21px; top:3px; width:9px; height:9px; border-radius:50%; background:var(--muted);';
-    var labelEl = document.createElement('div');
-    labelEl.style.cssText = 'font-size:12px; color:var(--muted);';
-    labelEl.textContent = label;
-    var valueEl = document.createElement('div');
-    valueEl.style.cssText = 'font-size:14px; font-weight:600;';
-    valueEl.textContent = value;
-    step.appendChild(dot);
-    step.appendChild(labelEl);
-    step.appendChild(valueEl);
-    timeline.appendChild(step);
-  }
-
-  function render(item) {
-    document.getElementById('loading').style.display = 'none';
-    document.getElementById('content').style.display = 'block';
-
-    showField('t-title', item.title, 'Untitled tender');
-    showField('t-source', item.source, '');
-    showField('t-closing', item.closingDate, 'Not specified');
-    showField('t-emd', item.emdAmount ? ('\u20b9' + item.emdAmount) : '', 'Not specified');
-    showField('t-category', item.category, 'Not specified');
-    showField('t-location', item.location || item.venue, 'Not specified');
-    showField('t-id', item.tenderId, 'Not specified');
-    showField('t-desc', item.workDescription || item.title, 'No description available for this tender.');
-
-    document.getElementById('t-link').setAttribute('href', item.link || '#');
-
-    addTimelineStep('Published', item.publishedDate || item.uploadedOn);
-    addTimelineStep('Document Download Ends', item.downloadEndDate);
-    addTimelineStep('Bid Submission Ends', item.submissionEndDate);
-    addTimelineStep('Bid Opening', item.bidOpeningDate);
-
-    if (!document.getElementById('timeline').children.length) {
-      document.getElementById('timeline-section').style.display = 'none';
+  (function checkAccess() {
+    if (sessionStorage.getItem('tr_unlocked') === 'yes') return;
+    var entered = prompt('Enter the Tender Radar password:');
+    if (entered !== SITE_PASSWORD) {
+      document.body.innerHTML =
+        '<div style="text-align:center; padding:80px 16px; font-family:sans-serif; color:#888;">' +
+        'Incorrect password. Refresh this page to try again.</div>';
+      throw new Error('access denied');
     }
+    sessionStorage.setItem('tr_unlocked', 'yes');
+  })();
+
+  function escapeHtml(str) {
+    var div = document.createElement('div');
+    div.textContent = str || '';
+    return div.innerHTML;
+  }
+
+  function renderList(tenders) {
+    document.getElementById('loading').style.display = 'none';
+
+    if (!tenders.length) {
+      document.getElementById('empty').style.display = 'block';
+      return;
+    }
+
+    var listEl = document.getElementById('list');
+    tenders.forEach(function (t) {
+      var card = document.createElement('a');
+      card.className = 'card';
+      card.href = 'detail.html?id=' + encodeURIComponent(t.id);
+
+      var metaParts = [];
+      if (t.source) metaParts.push('<span class="tag">' + escapeHtml(t.source) + '</span>');
+      if (t.closingDate) metaParts.push('<span>Closes: ' + escapeHtml(t.closingDate) + '</span>');
+      if (t.category) metaParts.push('<span>' + escapeHtml(t.category) + '</span>');
+
+      card.innerHTML =
+        '<div class="card-title">' + escapeHtml(t.title || 'Untitled tender') + '</div>' +
+        '<div class="card-meta">' + metaParts.join('') + '</div>';
+
+      listEl.appendChild(card);
+    });
   }
 
   function showError(message) {
@@ -167,37 +102,22 @@
     errorEl.textContent = message;
   }
 
-  var params = new URLSearchParams(window.location.search);
-  var tenderId = params.get('id');
-
-  // Fall back to reading it from the URL fragment (the part after #)
-  // if it's not in the query string. Fragments are handled purely by
-  // the browser and never touched by any server or hosting layer in
-  // between, which makes them more reliable in some hosting setups.
-  if (!tenderId && window.location.hash) {
-    var hashParams = new URLSearchParams(window.location.hash.replace(/^#/, ''));
-    tenderId = hashParams.get('id');
-  }
-
-  if (!tenderId) {
-    showError('No tender specified. Open this page via a link from your tender list.');
-  } else {
-    fetch(WIX_ENDPOINT + '?id=' + encodeURIComponent(tenderId))
-      .then(function (res) {
-        if (!res.ok) throw new Error('Server responded with ' + res.status);
-        return res.json();
-      })
-      .then(function (data) {
-        if (data.error) {
-          showError(data.error);
-        } else {
-          render(data);
-        }
-      })
-      .catch(function (err) {
-        showError('Could not load this tender: ' + err.message);
-      });
-  }
+  fetch('data/tenders.json')
+    .then(function (res) {
+      if (!res.ok) throw new Error('Could not load tender data (status ' + res.status + ')');
+      return res.json();
+    })
+    .then(function (data) {
+      var tenders = data.tenders || [];
+      var updated = data.last_updated ? new Date(data.last_updated).toLocaleString() : '';
+      document.getElementById('subtitle').textContent =
+        tenders.length + ' relevant tender' + (tenders.length === 1 ? '' : 's') +
+        (updated ? ', last updated ' + updated : '');
+      renderList(tenders);
+    })
+    .catch(function (err) {
+      showError('Could not load tenders: ' + err.message);
+    });
 </script>
 </body>
 </html>
