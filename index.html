@@ -29,7 +29,6 @@
     background-image:
       radial-gradient(600px circle at 100% 0%, rgba(236,27,52,0.05), transparent 60%),
       radial-gradient(600px circle at 0% 100%, rgba(217,154,43,0.06), transparent 60%);
-    background-attachment: fixed;
   }
   #root { max-width: 1080px; margin: 0 auto; padding: 32px 20px 64px; }
 
@@ -83,7 +82,7 @@
   .dept-table td, .dept-table th { padding: 7px 4px; text-align: left; border-bottom: 1px solid var(--border); }
   .dept-table th { color: var(--muted); font-weight: 600; font-size: 11.5px; }
   .dept-table td.count { text-align: right; font-weight: 600; }
-  #deptTableWrap { max-height: 260px; overflow-y: auto; }
+  #deptTableWrap { max-height: 260px; overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
 
   #tenderTableWrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; }
   #tenderTable { width: 100%; border-collapse: collapse; font-size: 13.5px; min-width: 960px; }
@@ -183,7 +182,7 @@
   // Change this to whatever password you want colleagues to use.
   // This is a light gate, not real security, anyone who reads this
   // file's code can see the password too.
-  var SITE_PASSWORD = "qwertyasdf";
+  var SITE_PASSWORD = "changeme123";
 
   (function checkAccess() {
     if (sessionStorage.getItem('tr_unlocked') === 'yes') return;
