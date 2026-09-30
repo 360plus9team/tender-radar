@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-29T15:26:53",
+  "last_updated": "2026-09-30T13:03:58",
   "tenders": [
     {
       "id": "ONGC-EOI_for_empanelment_of_agencies_for_Project_Management_Consultant__PMC__services_for_",
@@ -38,6 +38,25 @@
       "downloadEndDate": "",
       "submissionEndDate": "",
       "tenderValue": ""
+    },
+    {
+      "id": "WB_-_DIRECTORATE_OF_FORESTS-_WBFOR_JWD_NIT34__e__2026-27__2026_DOFR_1043706_1_",
+      "title": "Conducting Anti Poaching Awareness Campaign",
+      "source": "WB - DIRECTORATE OF FORESTS",
+      "tenderId": "[WBFOR/JWD/NIT34 (e)/2026-27][2026_DOFR_1043706_1]",
+      "uploadedOn": "30-Sep-2026 10:00 AM",
+      "closingDate": "07-Oct-2026 02:00 PM",
+      "location": "",
+      "category": "DIRECTORATE OF FORESTS||DFO - JALDAPARA WILDLIFE DIVISION",
+      "link": "https://wbtenders.gov.in/nicgep/app?component=%24DirectLink&page=FrontEndViewTender&service=direct&session=T&sp=SzeTj6i7M4FnPvOgVI8glfg%3D%3D",
+      "emdAmount": "15,711",
+      "workDescription": "Conducting Anti Poaching Awareness Campaign in Tea Garden and Fringe Villages under Jaldapara Wildlife Division over 34 nos",
+      "venue": "AS STATED IN NIT 34",
+      "publishedDate": "30-Sep-2026 10:00 AM",
+      "bidOpeningDate": "09-Oct-2026 02:00 PM",
+      "downloadEndDate": "07-Oct-2026 02:00 PM",
+      "submissionEndDate": "07-Oct-2026 02:00 PM",
+      "tenderValue": "7,85,536"
     },
     {
       "id": "WB_-_INFORMATION_AND_CULTURAL_AFFAIRS_DEPARTMENT-_10147-ICA_N__dt__24_09_2026__2026_ICAD_1",
@@ -116,25 +135,6 @@
       "tenderValue": "NA"
     },
     {
-      "id": "WB_-_OFFICE_OF_CHIEF_ELECTORAL_OFFICER_-_WB-_CEOWB_2026_e-Tender_01__SVEEP_CreativeAgency_",
-      "title": "Selection of Creative Agency For creation of digital content  management of social media and documentation work",
-      "source": "WB - OFFICE OF CHIEF ELECTORAL OFFICER - WB",
-      "tenderId": "[CEOWB/2026/e-Tender/01/ SVEEP/CreativeAgency  Dt-07.09.2026][2026_CEO_1039954_1]",
-      "uploadedOn": "07-Sep-2026 06:00 PM",
-      "closingDate": "30-Sep-2026 03:00 PM",
-      "location": "",
-      "category": "OFFICE OF CHIEF ELECTORAL OFFICER - WB",
-      "link": "https://wbtenders.gov.in/nicgep/app?component=%24DirectLink&page=FrontEndViewTender&service=direct&session=T&sp=SiMMbCn90o%2F1RLEU%2F4zjpzw%3D%3D",
-      "emdAmount": "1,00,000",
-      "workDescription": "Selection of Creative Agency    For creation of digital content, management of social media and documentation work",
-      "venue": "Office Of the Chief Electoral Officer West Bengal",
-      "publishedDate": "07-Sep-2026 06:00 PM",
-      "bidOpeningDate": "08-Oct-2026 03:30 PM",
-      "downloadEndDate": "30-Sep-2026 03:00 PM",
-      "submissionEndDate": "30-Sep-2026 03:00 PM",
-      "tenderValue": "NA"
-    },
-    {
       "id": "WB_-_OFFICE_OF_CHIEF_ELECTORAL_OFFICER_-_WB-_CEOWB_2026_e-Tender__03_SVEEP_Creative_Agency",
       "title": "Selection of Creative Agency for Design and Production of  TVC with and without fresh Shoot",
       "source": "WB - OFFICE OF CHIEF ELECTORAL OFFICER - WB",
@@ -166,6 +166,25 @@
       "emdAmount": "1,00,000",
       "workDescription": "Selection of Creative Agency for Audio Visual documentation of major electoral events with subtitles with and without fresh shoot",
       "venue": "Office of the Chief Electoral Officer West Bengal",
+      "publishedDate": "07-Sep-2026 06:00 PM",
+      "bidOpeningDate": "08-Oct-2026 03:30 PM",
+      "downloadEndDate": "30-Sep-2026 03:00 PM",
+      "submissionEndDate": "30-Sep-2026 03:00 PM",
+      "tenderValue": "NA"
+    },
+    {
+      "id": "WB_-_OFFICE_OF_CHIEF_ELECTORAL_OFFICER_-_WB-_CEOWB_2026_e-Tender_01__SVEEP_CreativeAgency_",
+      "title": "Selection of Creative Agency For creation of digital content  management of social media and documentation work",
+      "source": "WB - OFFICE OF CHIEF ELECTORAL OFFICER - WB",
+      "tenderId": "[CEOWB/2026/e-Tender/01/ SVEEP/CreativeAgency  Dt-07.09.2026][2026_CEO_1039954_1]",
+      "uploadedOn": "07-Sep-2026 06:00 PM",
+      "closingDate": "30-Sep-2026 03:00 PM",
+      "location": "",
+      "category": "OFFICE OF CHIEF ELECTORAL OFFICER - WB",
+      "link": "https://wbtenders.gov.in/nicgep/app?component=%24DirectLink&page=FrontEndViewTender&service=direct&session=T&sp=SiMMbCn90o%2F1RLEU%2F4zjpzw%3D%3D",
+      "emdAmount": "1,00,000",
+      "workDescription": "Selection of Creative Agency    For creation of digital content, management of social media and documentation work",
+      "venue": "Office Of the Chief Electoral Officer West Bengal",
       "publishedDate": "07-Sep-2026 06:00 PM",
       "bidOpeningDate": "08-Oct-2026 03:30 PM",
       "downloadEndDate": "30-Sep-2026 03:00 PM",
